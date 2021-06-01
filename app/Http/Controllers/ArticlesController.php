@@ -16,7 +16,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Article::orderBy('created_at')->paginate(5);
+        $articles = Article::orderBy('created_at', 'desc')->paginate(5);
 
         return view('articles.index', compact('articles'));
     }
@@ -126,7 +126,7 @@ class ArticlesController extends Controller
      */
     public function home()
     {
-        $articles = Article::orderBy('created_at')->paginate(3);
+        $articles = Article::orderBy('created_at', 'desc')->paginate(3);
 
         return view('home', compact('articles'));
     }
