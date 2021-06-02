@@ -78,14 +78,14 @@ class ArticlesController extends Controller
         ]);
 
         try {
-            $article_name = $request->input('article_name');
-            $article_text = $request->input('article_text');
-            $filtered_article_name = filter_var($article_name, FILTER_SANITIZE_STRIPPED);
-            $filtered_article_text = filter_var($article_text, FILTER_SANITIZE_STRIPPED);
+            $articleName = $request->input('article_name');
+            $articleText = $request->input('article_text');
+            $filteredArticleName = filter_var($articleName, FILTER_SANITIZE_STRIPPED);
+            $filteredArticleText = filter_var($articleText, FILTER_SANITIZE_STRIPPED);
 
             $article = new Article([
-                'article_name' => $filtered_article_name,
-                'article_text' => $filtered_article_text
+                'article_name' => $filteredArticleName,
+                'article_text' => $filteredArticleText
             ]);
             $article->save();
 
